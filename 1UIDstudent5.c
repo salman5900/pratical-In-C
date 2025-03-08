@@ -3,7 +3,7 @@
 #define MAX 100  // Maximum number of students
 #define SUBJECTS 5  // Number of subjects
 
-// Define the structure and declare the array globally
+
 struct Student {
     char name[50];
     int uid;
