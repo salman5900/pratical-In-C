@@ -32,8 +32,13 @@ int main() {
 
         // Input marks for 5 subjects
         for (int j = 0; j < SUBJECTS; j++) {
-            printf("Enter marks for subject %d: ", j + 1);
+            do {
+            printf("Enter marks for subject %d (0-100): ", j + 1);
             scanf("%f", &std[i].marks[j]);
+            if (std[i].marks[j] < 0 || std[i].marks[j] > 100) {
+                printf("Invalid marks. Please enter marks between 0 and 100.\n");
+            }
+            } while (std[i].marks[j] < 0 || std[i].marks[j] > 100);
         }
     }
 
