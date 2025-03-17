@@ -3,8 +3,9 @@
 
 // Function to sort the array (Bubble Sort)
 void sortArray(int arr[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
+    int i, j;
+    for (i = 0; i < n - 1; i++) {
+        for (j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
                 // Swap elements
                 int temp = arr[j];
@@ -16,14 +17,15 @@ void sortArray(int arr[], int n) {
 }
 
 int main() {
-    int n;
+    int n, i;
+    int *arr;  // Pointer for dynamic array
 
     // Taking input for the number of elements
     printf("Enter number of elements: ");
     scanf("%d", &n);
 
     // Dynamic memory allocation for the array
-    int *arr = (int *)malloc(n * sizeof(int));
+    arr = (int *)malloc(n * sizeof(int));
     if (arr == NULL) {
         printf("Memory allocation failed!\n");
         return 1; // Exit with error
@@ -31,7 +33,7 @@ int main() {
 
     // Taking input for the array elements
     printf("Enter elements: ");
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         scanf("%d", &arr[i]);
     }
 
@@ -40,7 +42,7 @@ int main() {
 
     // Displaying the sorted array
     printf("Sorted array: ");
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
     printf("\n");  // Added newline for better readability

@@ -12,6 +12,7 @@ int computeSum(int *arr, int n) {
 
 int main() {
     int n;
+    int i;
 
     printf("Enter the number of elements: ");
     scanf("%d", &n);
@@ -19,7 +20,7 @@ int main() {
     int arr[n];
     
     printf("Enter %d elements: ", n);
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         scanf("%d", arr + i);
     }
 

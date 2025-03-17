@@ -2,7 +2,8 @@
 
 int main() {
     int n;
-
+    int i;
+    
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
@@ -10,12 +11,12 @@ int main() {
     int *ptr = arr;  
 
     printf("Enter %d elements: ", n);
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         scanf("%d", ptr + i);
     }
 
     printf("Array elements: ");
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         printf("%d ", *(ptr + i));
     }
     

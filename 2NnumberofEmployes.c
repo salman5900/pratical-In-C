@@ -11,11 +11,13 @@ struct Employee {
 
 int main() {
     int n;  // Number of employees
+    int i;  // Loop variable
 
     printf("Enter the number of employees: ");
     scanf("%d", &n);
 
-    for (int i = 0; i < n; i++) {
+    // Input employee details
+    for (i = 0; i < n; i++) {
         printf("Enter Name:\n");
         scanf(" %[^\n]", emp[i].name);
 
@@ -26,8 +28,9 @@ int main() {
         scanf("%f", &emp[i].salary);
     }
 
+    // Display employee details
     printf("\nEmployee Details:\n");
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         printf("Name: %s\n", emp[i].name);
         printf("ID: %d\n", emp[i].emp_id);
         printf("Salary: %.2f\n", emp[i].salary);
