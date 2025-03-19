@@ -3,7 +3,7 @@
 int main() {
     FILE *fp;
     // writing into a file
-    fp = fopen("file.txt", "w");
+    fp = fopen("file2.txt", "w");
     if (fp == NULL) {
         printf("Error opening file\n");
         return 1;
@@ -15,7 +15,7 @@ int main() {
     // reading from a file and take count of characters
     int count = 0;
     char c;
-    fp = fopen("file.txt", "r");
+    fp = fopen("file2.txt", "r");
     if (fp == NULL) {
         printf("Error opening file\n");
         return 1;
@@ -28,7 +28,7 @@ int main() {
     // reading from a file and take count of words
 
     int words = 0;
-    fp = fopen("file.txt", "r");
+    fp = fopen("file2.txt", "r");
     if (fp == NULL) {
         printf("Error opening file\n");
         return 1;
@@ -42,7 +42,7 @@ int main() {
 
     // reading from a file and take count of lines
     int lines = 0;
-    fp = fopen("file.txt", "r");
+    fp = fopen("file2.txt", "r");
     if (fp == NULL) {
         printf("Error opening file\n");
         return 1;
