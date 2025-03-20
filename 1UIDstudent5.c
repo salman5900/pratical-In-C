@@ -7,11 +7,13 @@ struct Student {
     char name[50];
     int uid;
     float marks[SUBJECTS];  // Array to store marks of 5 subjects
+    float total;  // Total marks
+    int rank;  // Rank of the student
 };
 
 int main() {
-    struct Student std[MAX];  // Declare array inside main to follow C99 standards
-    int n, i, j;  // Declare loop variables at the start (C90 restriction)
+    struct Student std[MAX];  
+    int n, i, j;  
 
     // Get the number of students
     printf("Enter the number of students: ");
@@ -30,6 +32,8 @@ int main() {
         printf("UID: ");
         scanf("%d", &std[i].uid);
 
+        std[i].total = 0; // Initialize total marks to 0
+
         // Input marks for 5 subjects
         for (j = 0; j < SUBJECTS; j++) {
             do {
@@ -39,13 +43,32 @@ int main() {
                     printf("Invalid marks. Please enter marks between 0 and 100.\n");
                 }
             } while (std[i].marks[j] < 0 || std[i].marks[j] > 100);
+
+            std[i].total += std[i].marks[j]; // Add marks to total
         }
     }
 
-    // Display student details
-    printf("\nStudent Details:\n");
+    // Sorting Students based on Total Marks (Descending Order)
+    struct Student temp;
+    for (i = 0; i < n - 1; i++) {
+        for (j = i + 1; j < n; j++) {
+            if (std[i].total < std[j].total) {
+                temp = std[i];
+                std[i] = std[j];
+                std[j] = temp;
+            }
+        }
+    }
+
+    // Assign ranks
     for (i = 0; i < n; i++) {
-        printf("Student %d: Name: %s, UID: %d, Marks: ", i + 1, std[i].name, std[i].uid);
+        std[i].rank = i + 1;  // Assign rank based on sorted order
+    }
+
+    // Display student details with ranks
+    printf("\nStudent Details with Ranks:\n");
+    for (i = 0; i < n; i++) {
+        printf("Rank %d: Name: %s, UID: %d, Total Marks: %.2f, Marks: ", std[i].rank, std[i].name, std[i].uid, std[i].total);
         for (j = 0; j < SUBJECTS; j++) {
             printf("%.2f ", std[i].marks[j]);
         }

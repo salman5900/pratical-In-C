@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <string.h>
 
+# define C_SIZE 50
+
 union Address {
-    char name[50];
-    char house[50];
-    char city[50];
-    char state[50];
-    char pin[10];
+    char name[C_SIZE];
+    char house[C_SIZE];
+    char city[C_SIZE];
+    char state[C_SIZE];
+    char pin[C_SIZE];
 };
 
 int main() {
