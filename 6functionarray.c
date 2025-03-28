@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>  // For malloc()
+
 
 // Function to sort the array (Bubble Sort)
 void sortArray(int arr[], int n) {
@@ -24,12 +24,7 @@ int main() {
     printf("Enter number of elements: ");
     scanf("%d", &n);
 
-    // Dynamic memory allocation for the array
-    arr = (int *)malloc(n * sizeof(int));
-    if (arr == NULL) {
-        printf("Memory allocation failed!\n");
-        return 1; // Exit with error
-    }
+
 
     // Taking input for the array elements
     printf("Enter elements: ");
@@ -47,8 +42,6 @@ int main() {
     }
     printf("\n");  // Added newline for better readability
 
-    // Free allocated memory
-    free(arr);
 
     return 0;
 }
