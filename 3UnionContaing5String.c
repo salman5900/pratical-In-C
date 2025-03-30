@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 # define C_SIZE 50
 
