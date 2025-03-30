@@ -18,7 +18,7 @@ void sortArray(int arr[], int n) {
 
 int main() {
     int n, i;
-    int *arr;  // Pointer for dynamic array
+    int arr[100];  
 
     // Taking input for the number of elements
     printf("Enter number of elements: ");
@@ -41,7 +41,6 @@ int main() {
         printf("%d ", arr[i]);
     }
     printf("\n");  // Added newline for better readability
-
 
     return 0;
 }
