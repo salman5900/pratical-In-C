@@ -20,8 +20,9 @@ int main() {
         printf("Error opening file\n");
         return 1;
     }
-    while ((c = fgetc(fp))!= EOF)
+    while ((c = fgetc(fp))!= EOF){
         count++;
+    }
     fclose(fp);
     printf("Total number of characters in the file: %d\n", count);
 

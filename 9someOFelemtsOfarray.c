@@ -4,7 +4,8 @@
 // Function to compute sum using pointers
 int computeSum(int *arr, int n) {
     int sum = 0;
-    for (int i = 0; i < n; i++) {
+    int i;
+    for (i = 0; i < n; i++) {
         sum += *(arr + i);
     }
     return sum;
