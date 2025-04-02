@@ -22,7 +22,12 @@ int main() {
         return 1;
     }
 
-   
+    // Reading from file
+    while (fgets(ch, sizeof(ch), fp) != NULL) {
+        printf("%s", ch);
+    }
+
+    fclose(fp);  // Close the file after reading
 
     // Appending new data to the file
     fp = fopen("file1.txt", "a");
@@ -32,7 +37,6 @@ int main() {
     }
     fprintf(fp, "\nThis is appended data.");
     fclose(fp);  // Close the file after appending
-    
     fp = fopen("file1.txt", "r");
      // Reading from file
      while (fgets(ch, sizeof(ch), fp) != NULL) {
